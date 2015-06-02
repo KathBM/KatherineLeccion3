@@ -9,24 +9,42 @@ namespace ConsoleApplication1
     class Program
     {
 
+        class Program
+    {
+        static int num = 1 + 1;   
         static void Main(string[] args)
-
         {
-            Fibonacci fibo = new Fibonacci();
-            fibo.operacion(2);
-            Console.WriteLine(fibo.operacion(4));
-            Console.WriteLine(fibo.operacion(6));
-            Console.WriteLine(fibo.operacion(20));
-            Console.WriteLine(fibo.operacion(1));
-            Console.WriteLine(fibo.operacion(11));
-            Console.WriteLine(fibo.operacion(25));
+            System.Console.WriteLine("Hola Mundo!");
+            System.Console.WriteLine(""+ num);
+            Fibonacci n = new Fibonacci();
+            ArrayList ArrayFibo = new ArrayList();
+            int[] numbers;
+            numbers = new int[6]{4,6,20,1,11,25}; 
           
+            ArrayFibo.Add(4);
+            ArrayFibo.Add(6);
+            ArrayFibo.Add(20);
+            ArrayFibo.Add(1);
+            ArrayFibo.Add(11);
+            ArrayFibo.Add(25);
+            
+            Console.WriteLine("Array Fibonacci");
+            PrintValues(ArrayFibo);
+            Console.WriteLine("Resultado de Fibonacci");
+            PrintValues(n.calculaArray(ArrayFibo));
+            PrintValues(n.calculaArray(numbers));
+            
 
-            System.Console.ReadLine();
+            System.Console.ReadKey();
+            
 
-
-           
+        }
+        public static void PrintValues(IEnumerable myList)
+        {
+            
+            foreach (Object obj in myList)
+                Console.Write("   {0}", obj);
+            Console.WriteLine();
         }
     }
 }
-   
